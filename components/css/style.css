@@ -982,6 +982,11 @@
   height: 20px;
 }
 
+.navigation-overlay:not(.navigation-active) .navigation-overlay-link,
+.navigation-overlay:not(.navigation-active) .navigation-overlay-cta {
+  pointer-events: none;
+}
+
 .navigation-overlay.navigation-active {
   opacity: 1;
 }
@@ -2367,6 +2372,7 @@
   }
   .navigation-toggle {
     display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
   }
   .navigation-menu {
     display: none;
@@ -2420,6 +2426,9 @@
   }
   .home-hero-subtitle {
     font-size: var(--font-size-base);
+  }
+  .hero-title {
+    font-size: var(--font-size-3xl);
   }
   .hero-quick-links {
     gap: var(--spacing-sm);
@@ -2561,9 +2570,9 @@
   }
   .hero-cta-group {
     width: 100%;
+    justify-content: center;
   }
   .hero-cta-primary {
-    width: 100%;
     justify-content: center;
   }
   .portfolio-carousel-wrapper {

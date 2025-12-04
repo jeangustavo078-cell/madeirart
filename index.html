@@ -1943,9 +1943,18 @@
                   );
 
                   let portfolioIndex = 0;
-                  const portfolioCardWidth = 380 + 32;
 
                   function updatePortfolioCarousel() {
+                    let portfolioCardWidth;
+                    if (window.innerWidth <= 479) {
+                      portfolioCardWidth = 260 + 32;
+                    } else if (window.innerWidth <= 767) {
+                      portfolioCardWidth = 280 + 32;
+                    } else if (window.innerWidth <= 991) {
+                      portfolioCardWidth = 320 + 32;
+                    } else {
+                      portfolioCardWidth = 380 + 32;
+                    }
                     let maxIndex;
                     if (window.innerWidth < 768) {
                       maxIndex = portfolioCards.length - 1;
