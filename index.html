@@ -1946,11 +1946,16 @@
                   const portfolioCardWidth = 380 + 32;
 
                   function updatePortfolioCarousel() {
-                    const maxIndex = Math.max(
-                      0,
-                      portfolioCards.length -
-                        Math.floor(window.innerWidth / portfolioCardWidth)
-                    );
+                    let maxIndex;
+                    if (window.innerWidth < 768) {
+                      maxIndex = portfolioCards.length - 1;
+                    } else {
+                      maxIndex = Math.max(
+                        0,
+                        portfolioCards.length -
+                          Math.floor(window.innerWidth / portfolioCardWidth)
+                      );
+                    }
                     portfolioIndex = Math.max(
                       0,
                       Math.min(portfolioIndex, maxIndex)
